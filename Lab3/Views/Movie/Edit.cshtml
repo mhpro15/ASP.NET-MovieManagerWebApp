@@ -1,0 +1,59 @@
+﻿
+@model Lab3.Controllers.MovieController;
+
+@{
+    ViewData["Title"] = "Edit Movie";
+    string movieId = ViewData["MovieId"] as string; ;
+}
+<html>
+    <body>
+
+    
+<h1>Edit Movie</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+            <div class="form-group">
+                <label  class="control-label">Title</label>
+                <input required="true" class="form-control" id="titleBox"/>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Release Year</label>
+                <input required="true" class="form-control" type="number" id="yearBox"/>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Genre</label>
+               <select required="true" id="genreBox">
+                   <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+               </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Director</label>
+                <input required="true"class="form-control" id="directorBox"/>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Image Url</label>
+                <input required="true" class="form-control" id="imgBox"/>
+            </div>
+
+            <br />
+                <button id="submitBtn" class="btn btn-primary" >Submit</button>
+        
+    </div>
+   
+</div>
+ <script src="../../js/edit.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        console.log("movieId: " + "@movieId");
+        getMovie("@movieId");
+    </script>
+</body>
+</html>

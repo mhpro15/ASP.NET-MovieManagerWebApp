@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Lab3.Controllers.MovieController
+@{
+	ViewData["Title"] = "Watch";
+	string movieId = ViewData["MovieId"] as string; 
+	string currentUser = ViewData["CurrentUser"] as string;
+}
+<html>
+	<body>
+		<div>
+		<h1>Watch Movie</h1>
+			<hr />
+			<div >
+				<h2 id="movieTitle"></h2>
+				<div">
+					<video name="video" width="80%" controls>
+						<source src= @($"https://d1806bmjd38ma1.cloudfront.net/{movieId}.mp4") type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<a href=@($"https://d1806bmjd38ma1.cloudfront.net/{movieId}.mp4") ><button>Download</button></a>
+				</div>
+				<br />
+				<div id="ratingBlock">
+						<div class="slidecontainer">
+							<input type="range" min="1" max="10" value="5" class="slider" id="myRange"></input>
+								 <p id="rangeValue"></p>
+						</div>
+				<input type="button" class="btn btn-primary" value="Send" id="rateMovie"/>
+				</div>
+				<br />
+				<div id="commentBlock"> 
+					<h2>Comments</h2>
+
+				</div>
+			</div>
+		</div>
+		<script src="../js/watch.js" asp-append-version="true"></script>
+	<script type="text/javascript">
+		getMovie(@movieId,"@currentUser");
+	</script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+﻿
+@model Lab3.Controllers.MovieController;
+
+@{
+    ViewData["Title"] = "Add New Movie";
+}
+
+<h1>Add New Movie</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype = "multipart/form-data" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MovieRequest.Title" class="control-label"></label>
+                <input asp-for="MovieRequest.Title" class="form-control" />
+                <span asp-validation-for="MovieRequest.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieRequest.ReleaseYear" class="control-label">Release Year</label>
+                <input asp-for="MovieRequest.ReleaseYear" class="form-control" type="number"/>
+                <span asp-validation-for="MovieRequest.ReleaseYear" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="MovieRequest.Genre" class="control-label"></label>
+               <select asp-for="MovieRequest.Genre">
+                   <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+               </select>
+                <span asp-validation-for="MovieRequest.Genre" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="MovieRequest.Director" class="control-label"></label>
+                <input asp-for="MovieRequest.Director" class="form-control" />
+                <span asp-validation-for="MovieRequest.Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieRequest.ImgUrl" class="control-label">Image Url</label>
+                <input asp-for="MovieRequest.ImgUrl" class="form-control" />
+                <span asp-validation-for="MovieRequest.ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Upload Movie</label>
+                <input required="true" type="file"  name="uploadedFile" class="form-control" />
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,28 @@
+﻿@model Lab3.Controllers.MovieController
+
+@{
+    ViewData["Title"] = "My Movie";
+    string currentUser = ViewData["CurrentUser"] as string;
+}
+<html>
+<body>
+<div class="text-center">
+    <a href="movie/create"><h4>Add new Movie</h4></a>
+    <h1 class="display-4">Mange Your Movie</h1>
+
+    <table class="table">
+            <tr>
+                <th>Movie Title</th>
+                   <th>Actions</th>
+                <th></th>
+            </tr>
+    <tbody id="movieList"></tbody>
+    </table>
+
+</div>
+ <script src="js/myMovieList.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getMovies("@currentUser");
+    </script>
+</body>
+</html>

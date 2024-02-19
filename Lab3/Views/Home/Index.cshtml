@@ -1,0 +1,84 @@
+﻿@model Lab3.Controllers.HomeController
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<body>
+<div class="text-center">
+    <h1 class="display-4">Welcome to Movie Now</h1>
+    <br />
+    <label>Search: </label>
+<input type="text" id="searchInput" />
+<label>Genre: </label>
+<select id="genreFilter">
+    <option value="All">All</option>
+	<option value="Action">Action</option>
+	<option value="Comedy">Comedy</option>
+	<option value="Drama">Drama</option>
+	<option value="Horror">Horror</option>
+	<option value="Romance">Romance</option>
+	<option value="Sci-Fi">Sci-Fi</option>
+	<option value="Thriller">Thriller</option>
+</select> 
+<label>Year: </label>
+<select id="yearFilter">
+		<option value="All">All</option>
+		<option value="2021">2021</option>
+		<option value="2020">2020</option>
+		<option value="2019">2019</option>
+		<option value="2018">2018</option>
+		<option value="2017">2017</option>
+		<option value="2016">2016</option>
+		<option value="2015">2015</option>
+		<option value="2014">2014</option>
+		<option value="2013">2013</option>
+		<option value="2012">2012</option>
+		<option value="2011">2011</option>
+		<option value="2010">2010</option>
+		<option value="2009">2009</option>
+		<option value="2008">2008</option>
+		<option value="2007">2007</option>
+		<option value="2006">2006</option>
+		<option value="2005">2005</option>
+		<option value="2004">2004</option>
+		<option value="2003">2003</option>
+		<option value="2002">2002</option>
+		<option value="2001">2001</option>
+	<option value="2000">2000</option>
+</select>
+<label>Rating: </label>
+<select id="rateFilter">
+<option value="All">All</option>
+	<option value="1">>=1</option>
+	<option value="2">>=2</option>
+	<option value="3">>=3</option>
+	<option value="4">>=4</option>
+	<option value="5">>=5</option>
+	<option value="6">>=6</option>
+	<option value="7">>=7</option>
+	<option value="8">>=8</option>
+	<option value="9">>=9</option>
+	<option value="10">>=10</option>
+</select>
+
+
+<button type="button" class="btn btn-secondary" id="searchButton">Search</button>
+    <table class="table">
+			<tr>
+				<th>Movie Title</th>
+				<th>Genre</th>
+				<th>Release Year</th>
+				<th>Rating</th>
+<th></th>
+			</tr>
+    <tbody id="movieList"></tbody>
+    </table>
+
+</div>
+ <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getMovies();
+    </script>
+</body>
+</html>

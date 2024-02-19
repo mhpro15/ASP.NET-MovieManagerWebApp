@@ -1,0 +1,22 @@
+
+{
+    "region" : "ca-central-1",
+    "configuration" : "Debug",
+    "framework"     : "net6.0",
+    "self-contained" : false,
+    "application"    : "Lab3hungnguyen",
+    "environment"    : "Lab3hungnguyen-dev",
+    "app-path"       : "/",
+    "iis-website"    : "Default Web Site",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "solution-stack"       : "64bit Windows Server 2019 v2.13.2 running IIS 10.0",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "lab3hungnguyen-dev",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "lab3",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
